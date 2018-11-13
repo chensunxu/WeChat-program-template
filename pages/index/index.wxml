@@ -1,2 +1,3 @@
-<!--index.wxml-->
+<import src="/components/toast/toast.wxml" />
+<template is="toast" data="{{ ..._toast_ }}" />
 <text>首页</text>
