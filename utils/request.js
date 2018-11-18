@@ -107,23 +107,18 @@ let moduls = {
     let tokenTime = wx.getStorageSync("tokenTime")
     let token = wx.getStorageSync("access_token")
     if (nowTime - tokenTime > 54e5) { // 默认一个半小时刷新一次token
-      this.getToken().then((restoken) => {
-        let nowTime = new Date().getTime()
-        wx.setStorageSync("access_token", restoken.data.data.access_token)
-        wx.setStorageSync("tokenTime", nowTime)
-        return new Promise((resolv, rejec) => {
+      return new Promise((resolv, rejec) => {
+        this.getToken().then(() => {
           wx.request({
-            url: host + params.url + "?accessToken=" + restoken.data.data.access_token,
+            url: host + params.url + "?accessToken=" + wx.getStorageSync("access_token"),
             data: params.data,
             method: method,
-            header: this.returnHeader(params.data, restoken.data.data.access_token, method),
+            header: this.returnHeader(params.data, wx.getStorageSync("access_token"), method),
             success: (r) => {
-              console.log(r)
-              wx.hideLoading();
+              // console.log(r)
               resolv(r)
             },
             fail: (err) => {
-              wx.hideLoading();
               rejec(err);
             },
           })
