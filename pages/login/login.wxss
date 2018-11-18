@@ -1,0 +1,37 @@
+.container {
+  text-align: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 999;
+  background-color: #fff;
+}
+
+.login-bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 0;
+  width: 632rpx;
+  height: 1070rpx;
+}
+.logo {
+  width: 158rpx;
+  height: 206rpx;
+  margin: 160rpx 0 22rpx 0;
+}
+
+.anthor-btn {
+  margin-top: 364rpx;
+  margin-bottom: 12rpx;
+  width: 478rpx;
+  line-height: 94rpx;
+  background-image: linear-gradient(136deg, #ff58ab 0%, #ff483f 100%);
+  border-radius: 48rpx;
+  color: #fff;
+  font-size: 36rpx;
+}

@@ -1,0 +1,6 @@
+<view wx:if="{{canIUse}}" class='container'>
+  <image class='login-bg'></image>
+  <image class='logo' src='/images/icon/logo.jpeg'></image>
+  <button class='anthor-btn' open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">开始体验</button>
+</view>
+<view wx:else>请升级微信版本</view>
